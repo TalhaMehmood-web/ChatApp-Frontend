@@ -58,7 +58,7 @@ const Login = ({ setTabValue }) => {
           setSelectedChat(null);
           setSelectedGroup(null);
           setSelectedUser(null);
-          navigate("/chats/conversations");
+          // navigate("/chats/conversations");
 
           localStorage.setItem("user", JSON.stringify(data.user));
           setUser(data.user);
@@ -67,18 +67,19 @@ const Login = ({ setTabValue }) => {
     }
   );
   const onSubmit = async (data) => {
+    console.log("uri", import.meta.env.MODE);
     await loginUserMutation.mutateAsync(data);
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
-      <Card className="border-none text-white">
+      <Card className="text-white border-none">
         <CardHeader>
           <CardTitle>Login</CardTitle>
           <CardDescription
             onClick={() => {
               setTabValue("signup");
             }}
-            className="text-blue-500 hover:underline cursor-pointer w-fit"
+            className="text-blue-500 cursor-pointer hover:underline w-fit"
           >
             Don't have an account? Signup
           </CardDescription>
@@ -112,7 +113,7 @@ const Login = ({ setTabValue }) => {
           </div>
           <CardDescription
             onClick={() => navigate("/forget-password")}
-            className="text-blue-500 hover:underline cursor-pointer w-fit"
+            className="text-blue-500 cursor-pointer hover:underline w-fit"
           >
             Forget Password? Click here.
           </CardDescription>
