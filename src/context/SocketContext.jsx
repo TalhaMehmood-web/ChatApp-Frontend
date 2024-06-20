@@ -20,12 +20,12 @@ export const SocketContextProvider = ({ children }) => {
   useEffect(() => {
     if (user) {
       console.log(user._id);
-      const socket = io("https://chat-app-backend-one-sigma.vercel.app/", {
+      const socket = io("https://chat-app-backend-one-sigma.vercel.app", {
         query: {
           userId: user._id,
         },
         withCredentials: true,
-        transports: ["websocket", "polling"],
+        transports: ["websocket"],
       });
       console.log("Connecting to socket:", BASE_SOCKET_URL); // Add this line
       setSocket(socket);
