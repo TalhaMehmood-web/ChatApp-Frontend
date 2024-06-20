@@ -58,7 +58,7 @@ const Login = ({ setTabValue }) => {
           setSelectedChat(null);
           setSelectedGroup(null);
           setSelectedUser(null);
-          // navigate("/chats/conversations");
+          navigate("/chats/conversations");
 
           localStorage.setItem("user", JSON.stringify(data.user));
           setUser(data.user);
