@@ -20,7 +20,7 @@ export const SocketContextProvider = ({ children }) => {
   useEffect(() => {
     if (user) {
       console.log(user._id);
-      const socket = io(BASE_SOCKET_URL, {
+      const socket = io("https://chat-app-backend-one-sigma.vercel.app", {
         query: {
           userId: user._id,
         },
