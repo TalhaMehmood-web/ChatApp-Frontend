@@ -16,7 +16,7 @@ export const SocketContextProvider = ({ children }) => {
   const socketProdURL = import.meta.env.VITE_PRODUCTION_SOCKET_URL;
   const BASE_SOCKET_URL =
     import.meta.env.MODE === "production" ? socketProdURL : socketDevURL;
-  console.log("Socket URL:", BASE_SOCKET_URL); // Debugging log
+
   useEffect(() => {
     if (user) {
       const socket = io(BASE_SOCKET_URL, {
@@ -26,10 +26,9 @@ export const SocketContextProvider = ({ children }) => {
         withCredentials: true,
         transports: ["websocket"],
       });
-      console.log("Connecting to socket:", BASE_SOCKET_URL); // Add this line
+
       setSocket(socket);
       socket.on("getOnlineUsers", (users) => {
-        console.log("Socket connected:", socket.id); // Add this line
         setOnlineUsers(users);
       });
 

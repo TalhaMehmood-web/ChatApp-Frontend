@@ -67,7 +67,6 @@ const Login = ({ setTabValue }) => {
     }
   );
   const onSubmit = async (data) => {
-    console.log("uri", import.meta.env.MODE);
     await loginUserMutation.mutateAsync(data);
   };
   return (
