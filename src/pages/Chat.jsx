@@ -106,14 +106,14 @@ const Chat = () => {
     handleNewParticipantsToGroup,
   ]);
   return (
-    <div className="flex flex-1 lg:p-2 p-1 overflow-hidden text-white ">
-      <div className=" hidden lg:flex  ">
+    <div className="flex flex-1 overflow-hidden text-white ">
+      <div className="hidden lg:flex">
         <Sidebar />
       </div>
       <div className="lg:flex lg:flex-[0.5]  hidden bg-[#111B21]  ">
         {<Outlet />}
       </div>
-      <div className="flex flex-1  space-x-3 ">
+      <div className="flex flex-1 space-x-3 ">
         <Details />
       </div>
     </div>
