@@ -78,6 +78,7 @@ module.exports = {
       "800px": "800px",
       "lg": "1050px",
       "sm": "600px"
+
     }
   },
   plugins: [require("tailwindcss-animate")],
